@@ -253,7 +253,7 @@ Private Sub btnGetAndSend_Click()
       DoEvents
     Else
       mail.SendMail txtEmail.Text, r(i), txtTitle.Text, txtContent.Text
-      If Err.Number > 0 Then
+      If Err.Number <> 0 Then
         DoEvents
         txtLog.Text = txtLog.Text & vbCrLf & Time & " - [" & i + 1 & "/" & UBound(r) + 1 & "]" & Err.Description
         DoEvents
